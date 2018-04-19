@@ -1,7 +1,0 @@
-package com.mlsc.ssm.controller;
-
-public class JedisDemo {
-	public static void main(String[] args) {
-		
-	}
-}

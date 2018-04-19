@@ -1,5 +1,0 @@
-package com.mlsc.ssm.job;
-
-public class QuartzJob {
-
-}

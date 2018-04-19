@@ -1,6 +1,0 @@
-package com.mlsc.ssm;
-
-public class TTTT<T> {
-
-	private T key;
-}

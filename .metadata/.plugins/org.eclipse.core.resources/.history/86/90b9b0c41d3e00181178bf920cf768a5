@@ -1,8 +1,0 @@
-package com.mlsc.ssm.controller;
-
-import org.springframework.test.context.ContextConfiguration;
-
-@ContextConfiguration(locations="classpath:applicationContext.xml")
-public class Test {
-
-}
