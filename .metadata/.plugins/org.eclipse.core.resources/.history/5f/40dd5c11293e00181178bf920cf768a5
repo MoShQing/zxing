@@ -1,0 +1,14 @@
+package com.mlsc.ssm.controller;
+
+import redis.clients.jedis.Jedis;
+
+public class JedisDemo {
+	public static void main(String[] args) {
+		Jedis jedis = new Jedis("127.0.0.1");
+		System.out.println("connection success");
+		System.out.println("server is running"+jedis.ping());
+		System.out.println(jedis.get("a"));
+		jedis.set("a", "999");
+		System.out.println(jedis.get("a"));
+	}
+}

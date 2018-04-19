@@ -1,0 +1,14 @@
+package com.mlsc.ssm.job;
+
+import java.util.Date;
+
+public class QuartzJob{
+
+	public void runWork() {
+		System.out.println(new Date());
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(new Date());
+	}
+}

@@ -1,0 +1,19 @@
+package com.mlsc.ssm.job;
+
+import java.util.Date;
+import java.util.TimeZone;
+
+import org.quartz.CronTrigger;
+import org.quartz.JobDataMap;
+import org.quartz.JobKey;
+import org.quartz.ScheduleBuilder;
+import org.quartz.Trigger;
+import org.quartz.TriggerBuilder;
+import org.quartz.TriggerKey;
+
+public class QuartzJob{
+
+	public void runWork() {
+		System.out.println(new Date());
+	}
+}

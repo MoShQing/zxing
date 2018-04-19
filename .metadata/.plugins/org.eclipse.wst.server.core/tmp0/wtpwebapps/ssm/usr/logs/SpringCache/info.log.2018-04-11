@@ -1,0 +1,1186 @@
+2018-04-11 09:46:48:332 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 09:46:48:408 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 09:46:48 CST 2018]; root of context hierarchy
+2018-04-11 09:46:48:442 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 09:46:48:661 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 09:46:48:664 ERROR [initWebApplicationContext] org.springframework.web.context.ContextLoader 331 Context initialization failed
+org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Failed to import bean definitions from URL location [classpath:spring-mybatis.xml]
+Offending resource: class path resource [applicationContext.xml]; nested exception is org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [spring-mybatis.xml]; nested exception is java.io.FileNotFoundException: class path resource [spring-mybatis.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:70)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:85)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:76)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.importBeanDefinitionResource(DefaultBeanDefinitionDocumentReader.java:248)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseDefaultElement(DefaultBeanDefinitionDocumentReader.java:199)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:184)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.doRegisterBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:141)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:110)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(XmlBeanDefinitionReader.java:508)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:335)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:303)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:180)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:216)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:187)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:540)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:454)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4973)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5467)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [spring-mybatis.xml]; nested exception is java.io.FileNotFoundException: class path resource [spring-mybatis.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:343)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:303)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:180)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:216)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.importBeanDefinitionResource(DefaultBeanDefinitionDocumentReader.java:242)
+	... 28 more
+Caused by: java.io.FileNotFoundException: class path resource [spring-mybatis.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:329)
+	... 32 more
+2018-04-11 09:46:48:669 INFO [doClose] org.springframework.web.context.support.XmlWebApplicationContext 873 Closing Root WebApplicationContext: startup date [Wed Apr 11 09:46:48 CST 2018]; root of context hierarchy
+2018-04-11 09:46:48:672 WARN [doClose] org.springframework.web.context.support.XmlWebApplicationContext 883 Exception thrown from ApplicationListener handling ContextClosedEvent
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: Root WebApplicationContext: startup date [Wed Apr 11 09:46:48 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:346)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:333)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:880)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:841)
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:579)
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:115)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:5014)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5659)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:160)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-04-11 09:46:48:673 WARN [doClose] org.springframework.web.context.support.XmlWebApplicationContext 891 Exception thrown from LifecycleProcessor on context close
+java.lang.IllegalStateException: LifecycleProcessor not initialized - call 'refresh' before invoking lifecycle methods via the context: Root WebApplicationContext: startup date [Wed Apr 11 09:46:48 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getLifecycleProcessor(AbstractApplicationContext.java:359)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:888)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:841)
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:579)
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:115)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:5014)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5659)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:160)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-04-11 09:49:18:410 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 09:49:18:498 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 09:49:18 CST 2018]; root of context hierarchy
+2018-04-11 09:49:18:530 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 09:49:18:668 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 09:49:18:671 ERROR [initWebApplicationContext] org.springframework.web.context.ContextLoader 331 Context initialization failed
+org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: Failed to import bean definitions from URL location [classpath:spring-mybatis.xml]
+Offending resource: class path resource [applicationContext.xml]; nested exception is org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [spring-mybatis.xml]; nested exception is java.io.FileNotFoundException: class path resource [spring-mybatis.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:70)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:85)
+	at org.springframework.beans.factory.parsing.ReaderContext.error(ReaderContext.java:76)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.importBeanDefinitionResource(DefaultBeanDefinitionDocumentReader.java:248)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseDefaultElement(DefaultBeanDefinitionDocumentReader.java:199)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.parseBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:184)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.doRegisterBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:141)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.registerBeanDefinitions(DefaultBeanDefinitionDocumentReader.java:110)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.registerBeanDefinitions(XmlBeanDefinitionReader.java:508)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:391)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:335)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:303)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:180)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:216)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:187)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:540)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:454)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4973)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5467)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [spring-mybatis.xml]; nested exception is java.io.FileNotFoundException: class path resource [spring-mybatis.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:343)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:303)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:180)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:216)
+	at org.springframework.beans.factory.xml.DefaultBeanDefinitionDocumentReader.importBeanDefinitionResource(DefaultBeanDefinitionDocumentReader.java:242)
+	... 28 more
+Caused by: java.io.FileNotFoundException: class path resource [spring-mybatis.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:329)
+	... 32 more
+2018-04-11 09:49:18:676 INFO [doClose] org.springframework.web.context.support.XmlWebApplicationContext 873 Closing Root WebApplicationContext: startup date [Wed Apr 11 09:49:18 CST 2018]; root of context hierarchy
+2018-04-11 09:49:18:680 WARN [doClose] org.springframework.web.context.support.XmlWebApplicationContext 883 Exception thrown from ApplicationListener handling ContextClosedEvent
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: Root WebApplicationContext: startup date [Wed Apr 11 09:49:18 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:346)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:333)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:880)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:841)
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:579)
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:115)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:5014)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5659)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:160)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-04-11 09:49:18:681 WARN [doClose] org.springframework.web.context.support.XmlWebApplicationContext 891 Exception thrown from LifecycleProcessor on context close
+java.lang.IllegalStateException: LifecycleProcessor not initialized - call 'refresh' before invoking lifecycle methods via the context: Root WebApplicationContext: startup date [Wed Apr 11 09:49:18 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getLifecycleProcessor(AbstractApplicationContext.java:359)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:888)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:841)
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:579)
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:115)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:5014)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5659)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:160)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-04-11 09:50:14:953 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 09:50:15:047 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 09:50:15 CST 2018]; root of context hierarchy
+2018-04-11 09:50:15:086 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 09:50:15:226 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 09:50:15:419 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 09:50:15:429 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 09:50:15:749 ERROR [init] com.alibaba.druid.pool.DruidDataSource 616 init datasource error
+java.sql.SQLException: Access denied for user 'root'@'192.168.253.186' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:998)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3835)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3771)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:870)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1659)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1206)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2239)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2270)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2069)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:146)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:140)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:140)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1358)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1412)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:606)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1681)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4973)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5467)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-04-11 09:50:15:757 ERROR [init] com.alibaba.druid.pool.DruidDataSource 633 dataSource init error
+java.sql.SQLException: Access denied for user 'root'@'192.168.253.186' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:998)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3835)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3771)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:870)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1659)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1206)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2239)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2270)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2069)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:146)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:140)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:140)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1358)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1412)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:606)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1681)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4973)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5467)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2018-04-11 09:50:15:758 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 09:50:15:759 ERROR [initWebApplicationContext] org.springframework.web.context.ContextLoader 331 Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [spring-mybatis.xml]: Invocation of init method failed; nested exception is java.sql.SQLException: Access denied for user 'root'@'192.168.253.186' (using password: YES)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:403)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4973)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5467)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.sql.SQLException: Access denied for user 'root'@'192.168.253.186' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:998)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3835)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3771)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:870)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1659)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1206)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2239)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2270)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2069)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:794)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:389)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:146)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:140)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:140)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1358)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1412)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:606)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1681)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1549)
+	... 21 more
+2018-04-11 09:51:03:035 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 09:51:03:111 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 09:51:03 CST 2018]; root of context hierarchy
+2018-04-11 09:51:03:148 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 09:51:03:275 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 09:51:03:460 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 09:51:03:471 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 09:51:03:929 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 09:51:03:982 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 943 ms
+2018-04-11 09:51:04:008 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 09:51:04:019 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 09:51:04 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 09:51:04:020 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 09:51:04:434 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2018-04-11 09:51:04:439 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-04-11 09:51:04:473 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 498 FrameworkServlet 'dispatcherServlet': initialization completed in 464 ms
+2018-04-11 09:57:52:796 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 09:57:52:874 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 09:57:52 CST 2018]; root of context hierarchy
+2018-04-11 09:57:52:907 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 09:57:53:069 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 09:57:53:265 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 09:57:53:276 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 09:57:53:712 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 09:57:53:767 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 968 ms
+2018-04-11 09:57:53:792 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 09:57:53:800 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 09:57:53 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 09:57:53:801 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 09:57:54:169 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2018-04-11 09:57:54:175 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-04-11 09:57:54:207 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 498 FrameworkServlet 'dispatcherServlet': initialization completed in 415 ms
+2018-04-11 10:08:23:999 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 10:08:24:074 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 10:08:24 CST 2018]; root of context hierarchy
+2018-04-11 10:08:24:117 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 10:08:24:248 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 10:08:24:426 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 10:08:24:436 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 10:08:24:845 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 10:08:24:892 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 889 ms
+2018-04-11 10:08:24:921 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 10:08:24:933 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 10:08:24 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 10:08:24:934 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 10:08:24:950 ERROR [initServletBean] org.springframework.web.servlet.DispatcherServlet 492 Context initialization failed
+org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 16 in XML document from class path resource [spring-mvc.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 16; columnNumber: 41; 与元素类型 "context:component-scan" 相关联的属性 "base-package" 应有左引号。
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:398)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:335)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:303)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:180)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:216)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:187)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:540)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:454)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:658)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:672)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:543)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:484)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1284)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1197)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1087)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5210)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5493)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 16; columnNumber: 41; 与元素类型 "context:component-scan" 相关联的属性 "base-package" 应有左引号。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:852)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanAttribute(XMLNSDocumentScannerImpl.java:447)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:250)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:428)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:390)
+	... 29 more
+2018-04-11 10:08:51:789 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 10:08:51:890 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 10:08:51 CST 2018]; root of context hierarchy
+2018-04-11 10:08:51:926 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 10:08:52:065 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 10:08:52:251 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 10:08:52:266 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 10:08:52:753 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 10:08:52:799 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 1004 ms
+2018-04-11 10:08:52:824 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 10:08:52:837 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 10:08:52 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 10:08:52:839 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 10:08:53:096 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.QueryController.query()
+2018-04-11 10:08:53:293 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2018-04-11 10:08:53:298 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-04-11 10:08:53:332 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 498 FrameworkServlet 'dispatcherServlet': initialization completed in 508 ms
+2018-04-11 10:15:12:618 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 10:15:12:713 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 10:15:12 CST 2018]; root of context hierarchy
+2018-04-11 10:15:12:749 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 10:15:12:886 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 10:15:13:063 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 10:15:13:073 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 10:15:13:500 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 10:15:13:568 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 946 ms
+2018-04-11 10:15:13:601 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 10:15:13:615 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 10:15:13 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 10:15:13:617 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 10:15:13:851 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.QueryController.query(java.lang.String)
+2018-04-11 10:15:14:046 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2018-04-11 10:15:14:051 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-04-11 10:15:14:086 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 498 FrameworkServlet 'dispatcherServlet': initialization completed in 485 ms
+2018-04-11 10:57:27:931 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 10:57:28:011 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 10:57:28 CST 2018]; root of context hierarchy
+2018-04-11 10:57:28:050 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 10:57:28:218 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 10:57:28:427 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 10:57:28:440 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 10:57:28:886 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 10:57:28:942 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 1006 ms
+2018-04-11 10:57:28:969 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 10:57:28:977 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 10:57:28 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 10:57:28:978 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 10:57:29:119 ERROR [initServletBean] org.springframework.web.servlet.DispatcherServlet 492 Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queryController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate com.mlsc.ssm.controller.QueryController.namedParameterJdbcTemplate; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:292)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:658)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:672)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:543)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:484)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1284)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1197)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1087)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5210)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5493)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate com.mlsc.ssm.controller.QueryController.namedParameterJdbcTemplate; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	... 29 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1103)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:963)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:858)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:480)
+	... 31 more
+2018-04-11 10:57:29:207 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 10:57:29:217 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 10:57:29 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 10:57:29:220 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 10:57:29:266 ERROR [initServletBean] org.springframework.web.servlet.DispatcherServlet 492 Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queryController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate com.mlsc.ssm.controller.QueryController.namedParameterJdbcTemplate; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:292)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:658)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:672)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:543)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:484)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1284)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1197)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:864)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:134)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate com.mlsc.ssm.controller.QueryController.namedParameterJdbcTemplate; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	... 34 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1103)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:963)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:858)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:480)
+	... 36 more
+2018-04-11 10:57:58:793 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 10:57:58:873 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 10:57:58 CST 2018]; root of context hierarchy
+2018-04-11 10:57:58:905 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 10:57:59:035 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 10:57:59:217 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 10:57:59:229 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 10:57:59:706 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 10:57:59:755 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 957 ms
+2018-04-11 10:57:59:780 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 10:57:59:789 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 10:57:59 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 10:57:59:790 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 10:57:59:927 ERROR [initServletBean] org.springframework.web.servlet.DispatcherServlet 492 Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queryController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: org.springframework.jdbc.core.JdbcTemplate com.mlsc.ssm.controller.QueryController.jdbcTemplate; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [org.springframework.jdbc.core.JdbcTemplate] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:292)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:658)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:672)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:543)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:484)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1284)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1197)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1087)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5210)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5493)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: org.springframework.jdbc.core.JdbcTemplate com.mlsc.ssm.controller.QueryController.jdbcTemplate; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [org.springframework.jdbc.core.JdbcTemplate] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	... 29 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [org.springframework.jdbc.core.JdbcTemplate] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1103)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:963)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:858)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:480)
+	... 31 more
+2018-04-11 11:00:47:089 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 11:00:47:170 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 11:00:47 CST 2018]; root of context hierarchy
+2018-04-11 11:00:47:207 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 11:00:47:346 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 11:00:47:536 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 11:00:47:546 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 11:00:48:001 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 11:00:48:071 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 978 ms
+2018-04-11 11:00:48:105 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 11:00:48:117 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 11:00:48 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 11:00:48:118 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 11:00:48:269 ERROR [initServletBean] org.springframework.web.servlet.DispatcherServlet 492 Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queryController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: org.springframework.jdbc.core.JdbcTemplate com.mlsc.ssm.controller.QueryController.jdbcTemplate; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [org.springframework.jdbc.core.JdbcTemplate] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:292)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1185)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:658)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:672)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:543)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:484)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1284)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1197)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1087)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5210)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5493)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: org.springframework.jdbc.core.JdbcTemplate com.mlsc.ssm.controller.QueryController.jdbcTemplate; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [org.springframework.jdbc.core.JdbcTemplate] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:289)
+	... 29 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [org.springframework.jdbc.core.JdbcTemplate] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1103)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:963)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:858)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:480)
+	... 31 more
+2018-04-11 11:04:29:228 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 11:04:29:317 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 11:04:29 CST 2018]; root of context hierarchy
+2018-04-11 11:04:29:357 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 11:04:29:489 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 11:04:29:664 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 11:04:29:675 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 11:04:30:117 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 11:04:30:194 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 959 ms
+2018-04-11 11:04:30:216 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 11:04:30:228 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 11:04:30 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 11:04:30:230 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 11:04:30:465 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.QueryController.save()
+2018-04-11 11:04:30:466 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.QueryController.query(java.lang.String)
+2018-04-11 11:04:30:645 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2018-04-11 11:04:30:651 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-04-11 11:04:30:685 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 498 FrameworkServlet 'dispatcherServlet': initialization completed in 469 ms
+2018-04-11 11:05:13:318 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2018-04-11 11:05:13:376 INFO [<init>] org.springframework.jdbc.support.SQLErrorCodesFactory 126 SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2018-04-11 11:16:45:146 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 11:16:45:246 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 11:16:45 CST 2018]; root of context hierarchy
+2018-04-11 11:16:45:287 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 11:16:45:421 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 11:16:45:596 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 11:16:45:606 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 11:16:46:073 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 11:16:46:143 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 993 ms
+2018-04-11 11:16:46:173 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 11:16:46:182 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 11:16:46 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 11:16:46:184 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 11:16:46:405 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.QueryController.save()
+2018-04-11 11:16:46:406 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.QueryController.query(java.lang.String)
+2018-04-11 11:16:46:607 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2018-04-11 11:16:46:613 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-04-11 11:16:46:643 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 498 FrameworkServlet 'dispatcherServlet': initialization completed in 470 ms
+2018-04-11 11:16:53:707 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2018-04-11 11:16:53:735 INFO [<init>] org.springframework.jdbc.support.SQLErrorCodesFactory 126 SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2018-04-11 11:28:52:387 INFO [doClose] org.springframework.web.context.support.XmlWebApplicationContext 873 Closing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 11:16:46 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 11:28:52:394 INFO [doClose] org.springframework.web.context.support.XmlWebApplicationContext 873 Closing Root WebApplicationContext: startup date [Wed Apr 11 11:16:45 CST 2018]; root of context hierarchy
+2018-04-11 11:28:52:403 INFO [close] com.alibaba.druid.pool.DruidDataSource 1253 {dataSource-1} closed
+2018-04-11 11:30:07:752 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 11:30:07:847 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 11:30:07 CST 2018]; root of context hierarchy
+2018-04-11 11:30:07:886 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 11:30:08:044 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 11:30:08:253 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 11:30:08:266 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 11:30:08:706 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 11:30:08:752 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 996 ms
+2018-04-11 11:30:08:777 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 11:30:08:786 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 11:30:08 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 11:30:08:788 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 11:30:08:816 ERROR [initServletBean] org.springframework.web.servlet.DispatcherServlet 492 Context initialization failed
+org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 60 in XML document from class path resource [spring-mvc.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 60; columnNumber: 42; 元素 "aop:config" 的前缀 "aop" 未绑定。
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:398)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:335)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:303)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:180)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:216)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:187)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:540)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:454)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:658)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:672)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:543)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:484)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1284)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1197)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1087)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5210)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5493)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 60; columnNumber: 42; 元素 "aop:config" 的前缀 "aop" 未绑定。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:284)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:284)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:428)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:390)
+	... 29 more
+2018-04-11 11:30:45:395 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 11:30:45:473 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 11:30:45 CST 2018]; root of context hierarchy
+2018-04-11 11:30:45:506 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 11:30:45:641 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 11:30:45:844 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 11:30:45:854 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 11:30:46:310 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 11:30:46:357 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 958 ms
+2018-04-11 11:30:46:379 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 11:30:46:386 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 11:30:46 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 11:30:46:387 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 11:30:46:409 ERROR [initServletBean] org.springframework.web.servlet.DispatcherServlet 492 Context initialization failed
+org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 60 in XML document from class path resource [spring-mvc.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 60; columnNumber: 42; 元素 "aop:config" 的前缀 "aop" 未绑定。
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:398)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:335)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:303)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:180)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:216)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:187)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:129)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:540)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:454)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:658)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:672)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:543)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:484)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1284)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1197)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1087)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5210)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5493)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 60; columnNumber: 42; 元素 "aop:config" 的前缀 "aop" 未绑定。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:284)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:284)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:76)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadDocument(XmlBeanDefinitionReader.java:428)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:390)
+	... 29 more
+2018-04-11 11:32:26:093 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 11:32:26:174 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 11:32:26 CST 2018]; root of context hierarchy
+2018-04-11 11:32:26:210 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 11:32:26:345 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 11:32:26:546 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 11:32:26:560 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 11:32:27:044 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 11:32:27:105 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 1008 ms
+2018-04-11 11:32:27:130 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 11:32:27:137 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 11:32:27 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 11:32:27:138 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 11:32:27:274 ERROR [initServletBean] org.springframework.web.servlet.DispatcherServlet 492 Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queryController' defined in file [D:\myWorkSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ssm\WEB-INF\classes\com\mlsc\ssm\controller\QueryController.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0': Cannot create inner bean '(inner bean)#1f8fc18' of type [org.springframework.aop.aspectj.AspectJMethodBeforeAdvice] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#1f8fc18': Cannot create inner bean '(inner bean)#7feb91d0' of type [org.springframework.aop.config.MethodLocatingFactoryBean] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#7feb91d0': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'logInterceptor' is defined
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:471)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:658)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:672)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:543)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:484)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1284)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1197)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1087)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5210)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5493)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0': Cannot create inner bean '(inner bean)#1f8fc18' of type [org.springframework.aop.aspectj.AspectJMethodBeforeAdvice] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#1f8fc18': Cannot create inner bean '(inner bean)#7feb91d0' of type [org.springframework.aop.config.MethodLocatingFactoryBean] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#7feb91d0': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'logInterceptor' is defined
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:290)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:129)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:646)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:140)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1114)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1017)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:92)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:103)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:958)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:930)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:465)
+	... 26 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#1f8fc18': Cannot create inner bean '(inner bean)#7feb91d0' of type [org.springframework.aop.config.MethodLocatingFactoryBean] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#7feb91d0': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'logInterceptor' is defined
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:290)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:129)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:632)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:140)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1114)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1017)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:276)
+	... 44 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#7feb91d0': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'logInterceptor' is defined
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:276)
+	... 52 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'logInterceptor' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:641)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1159)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:590)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:587)
+	at org.springframework.aop.config.MethodLocatingFactoryBean.setBeanFactory(MethodLocatingFactoryBean.java:69)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1572)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1540)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	... 54 more
+2018-04-11 11:34:17:822 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 11:34:17:908 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 11:34:17 CST 2018]; root of context hierarchy
+2018-04-11 11:34:17:941 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 11:34:18:077 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 11:34:18:270 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 11:34:18:280 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 11:34:18:731 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 11:34:18:780 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 954 ms
+2018-04-11 11:34:18:814 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 11:34:18:821 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 11:34:18 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 11:34:18:822 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 11:34:19:336 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.QueryController.save()
+2018-04-11 11:34:19:337 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.QueryController.query(java.lang.String)
+2018-04-11 11:34:19:642 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2018-04-11 11:34:19:656 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-04-11 11:34:19:706 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 498 FrameworkServlet 'dispatcherServlet': initialization completed in 892 ms
+2018-04-11 11:34:34:146 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 11:34:34:224 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 11:34:34 CST 2018]; root of context hierarchy
+2018-04-11 11:34:34:257 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 11:34:34:398 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 11:34:34:592 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 11:34:34:607 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 11:34:35:082 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 11:34:35:142 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 992 ms
+2018-04-11 11:34:35:171 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 11:34:35:180 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 11:34:35 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 11:34:35:180 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 11:34:35:640 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.QueryController.save()
+2018-04-11 11:34:35:641 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.QueryController.query(java.lang.String)
+2018-04-11 11:34:35:978 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2018-04-11 11:34:35:987 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-04-11 11:34:36:039 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 498 FrameworkServlet 'dispatcherServlet': initialization completed in 868 ms
+2018-04-11 11:34:54:609 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 11:34:54:715 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 11:34:54 CST 2018]; root of context hierarchy
+2018-04-11 11:34:54:765 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 11:34:54:917 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 11:34:55:141 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 11:34:55:159 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 11:34:55:662 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 11:34:55:737 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 1124 ms
+2018-04-11 11:34:55:765 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 11:34:55:779 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 11:34:55 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 11:34:55:781 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 11:34:56:351 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.QueryController.save()
+2018-04-11 11:34:56:351 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.QueryController.query(java.lang.String)
+2018-04-11 11:34:56:711 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2018-04-11 11:34:56:726 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-04-11 11:34:56:799 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 498 FrameworkServlet 'dispatcherServlet': initialization completed in 1033 ms
+2018-04-11 11:35:12:164 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2018-04-11 11:35:12:192 INFO [<init>] org.springframework.jdbc.support.SQLErrorCodesFactory 126 SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2018-04-11 11:36:23:115 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 11:36:23:200 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 11:36:23 CST 2018]; root of context hierarchy
+2018-04-11 11:36:23:235 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 11:36:23:374 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 11:36:23:583 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 11:36:23:595 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 11:36:24:052 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 11:36:24:103 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 984 ms
+2018-04-11 11:36:24:128 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 11:36:24:135 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 11:36:24 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 11:36:24:136 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 11:36:24:633 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.impl.QueryController.save()
+2018-04-11 11:36:24:633 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.impl.QueryController.query(java.lang.String)
+2018-04-11 11:36:24:634 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.QueryController.save()
+2018-04-11 11:36:24:634 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.QueryController.query(java.lang.String)
+2018-04-11 11:36:25:020 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2018-04-11 11:36:25:030 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-04-11 11:36:25:083 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 498 FrameworkServlet 'dispatcherServlet': initialization completed in 953 ms
+2018-04-11 11:40:00:038 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 11:40:00:110 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 11:40:00 CST 2018]; root of context hierarchy
+2018-04-11 11:40:00:143 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 11:40:00:271 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 11:40:00:475 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 11:40:00:486 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 11:40:00:941 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 11:40:00:994 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 953 ms
+2018-04-11 11:40:01:018 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 11:40:01:027 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 11:40:01 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 11:40:01:028 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 11:40:05:307 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.impl.QueryController.save()
+2018-04-11 11:40:05:307 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.impl.QueryController.query(java.lang.String)
+2018-04-11 11:40:05:308 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.QueryController.save()
+2018-04-11 11:40:05:308 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.QueryController.query(java.lang.String)
+2018-04-11 11:40:05:640 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2018-04-11 11:40:05:652 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-04-11 11:40:05:711 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 498 FrameworkServlet 'dispatcherServlet': initialization completed in 4693 ms
+2018-04-11 11:42:29:995 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 11:42:30:083 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 11:42:30 CST 2018]; root of context hierarchy
+2018-04-11 11:42:30:123 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 11:42:30:261 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 11:42:30:451 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 11:42:30:461 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 11:42:30:926 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 11:42:30:976 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 977 ms
+2018-04-11 11:42:30:998 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 11:42:31:004 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 11:42:31 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 11:42:31:005 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 11:42:31:128 ERROR [initServletBean] org.springframework.web.servlet.DispatcherServlet 492 Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queryController2' defined in file [D:\myWorkSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ssm\WEB-INF\classes\com\mlsc\ssm\controller\impl\QueryController.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0': Cannot create inner bean '(inner bean)#7e438dd' of type [org.springframework.aop.aspectj.AspectJMethodBeforeAdvice] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#7e438dd': Cannot create inner bean '(inner bean)#5d7d1ac6' of type [org.springframework.aop.config.MethodLocatingFactoryBean] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#5d7d1ac6': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'logInterceptr' is defined
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:471)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:658)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:672)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:543)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:484)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:158)
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1284)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1197)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1087)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5210)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5493)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0': Cannot create inner bean '(inner bean)#7e438dd' of type [org.springframework.aop.aspectj.AspectJMethodBeforeAdvice] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#7e438dd': Cannot create inner bean '(inner bean)#5d7d1ac6' of type [org.springframework.aop.config.MethodLocatingFactoryBean] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#5d7d1ac6': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'logInterceptr' is defined
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:290)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:129)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:646)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:140)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1114)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1017)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:92)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:103)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:958)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:930)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:465)
+	... 26 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#7e438dd': Cannot create inner bean '(inner bean)#5d7d1ac6' of type [org.springframework.aop.config.MethodLocatingFactoryBean] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#5d7d1ac6': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'logInterceptr' is defined
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:290)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:129)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:632)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:140)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1114)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1017)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:276)
+	... 44 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#5d7d1ac6': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'logInterceptr' is defined
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:276)
+	... 52 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'logInterceptr' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:641)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1159)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:590)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:587)
+	at org.springframework.aop.config.MethodLocatingFactoryBean.setBeanFactory(MethodLocatingFactoryBean.java:69)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1572)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1540)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	... 54 more
+2018-04-11 11:42:47:535 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 11:42:47:615 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 11:42:47 CST 2018]; root of context hierarchy
+2018-04-11 11:42:47:654 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 11:42:47:800 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 11:42:47:975 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 11:42:47:985 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 11:42:48:446 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 11:42:48:491 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 952 ms
+2018-04-11 11:42:48:514 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 11:42:48:523 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 11:42:48 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 11:42:48:525 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 11:42:49:039 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.impl.QueryController.save()
+2018-04-11 11:42:49:039 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.impl.QueryController.query(java.lang.String)
+2018-04-11 11:42:49:040 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.QueryController.save()
+2018-04-11 11:42:49:040 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.QueryController.query(java.lang.String)
+2018-04-11 11:42:49:369 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2018-04-11 11:42:49:386 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-04-11 11:42:49:456 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 498 FrameworkServlet 'dispatcherServlet': initialization completed in 942 ms
+2018-04-11 13:31:56:840 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 13:31:56:918 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 13:31:56 CST 2018]; root of context hierarchy
+2018-04-11 13:31:56:957 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 13:31:57:093 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 13:31:57:303 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 13:31:57:314 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 13:31:57:764 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 13:31:57:819 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 975 ms
+2018-04-11 13:31:57:844 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 13:31:57:851 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 13:31:57 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 13:31:57:852 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 13:31:58:357 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.impl.QueryController.save()
+2018-04-11 13:31:58:358 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.impl.QueryController.query(java.lang.String)
+2018-04-11 13:31:58:358 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.QueryController.save()
+2018-04-11 13:31:58:358 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.QueryController.query(java.lang.String)
+2018-04-11 13:31:58:667 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2018-04-11 13:31:58:677 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-04-11 13:31:58:739 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 498 FrameworkServlet 'dispatcherServlet': initialization completed in 894 ms
+2018-04-11 15:34:56:677 INFO [doClose] org.springframework.web.context.support.XmlWebApplicationContext 873 Closing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 13:31:57 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 15:34:56:683 INFO [doClose] org.springframework.web.context.support.XmlWebApplicationContext 873 Closing Root WebApplicationContext: startup date [Wed Apr 11 13:31:56 CST 2018]; root of context hierarchy
+2018-04-11 15:34:56:690 INFO [close] com.alibaba.druid.pool.DruidDataSource 1253 {dataSource-1} closed
+2018-04-11 15:34:59:900 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 15:34:59:968 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 15:34:59 CST 2018]; root of context hierarchy
+2018-04-11 15:35:00:002 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 15:35:00:146 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 15:35:00:373 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 15:35:00:386 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 15:35:00:896 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 15:35:00:960 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 1057 ms
+2018-04-11 15:35:00:989 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 15:35:00:998 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 15:35:00 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 15:35:00:999 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 15:35:01:558 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.impl.QueryController.save()
+2018-04-11 15:35:01:558 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.impl.QueryController.query(java.lang.String)
+2018-04-11 15:35:01:558 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.QueryController.save()
+2018-04-11 15:35:01:559 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.QueryController.query(java.lang.String)
+2018-04-11 15:35:01:897 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2018-04-11 15:35:01:910 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-04-11 15:35:01:983 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 498 FrameworkServlet 'dispatcherServlet': initialization completed in 994 ms
+2018-04-11 15:40:30:209 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 285 Root WebApplicationContext: initialization started
+2018-04-11 15:40:30:296 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing Root WebApplicationContext: startup date [Wed Apr 11 15:40:30 CST 2018]; root of context hierarchy
+2018-04-11 15:40:30:332 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [applicationContext.xml]
+2018-04-11 15:40:30:479 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2018-04-11 15:40:30:681 WARN [doScan] org.mybatis.spring.mapper.ClassPathMapperScanner 155 No MyBatis mapper was found in '[org.ssm.dufy.dao]' package. Please check your configuration.
+2018-04-11 15:40:30:693 INFO [loadProperties] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 172 Loading properties file from class path resource [jdbc.properties]
+2018-04-11 15:40:31:186 INFO [init] com.alibaba.druid.pool.DruidDataSource 642 {dataSource-1} inited
+2018-04-11 15:40:31:241 INFO [initWebApplicationContext] org.springframework.web.context.ContextLoader 325 Root WebApplicationContext: initialization completed in 1028 ms
+2018-04-11 15:40:31:264 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 479 FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-11 15:40:31:272 INFO [prepareRefresh] org.springframework.web.context.support.XmlWebApplicationContext 513 Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Wed Apr 11 15:40:31 CST 2018]; parent: Root WebApplicationContext
+2018-04-11 15:40:31:273 INFO [loadBeanDefinitions] org.springframework.beans.factory.xml.XmlBeanDefinitionReader 316 Loading XML bean definitions from class path resource [spring-mvc.xml]
+2018-04-11 15:40:34:161 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.impl.QueryController.save()
+2018-04-11 15:40:34:161 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query2],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.impl.QueryController.query(java.lang.String)
+2018-04-11 15:40:34:162 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.mlsc.ssm.controller.QueryController.save()
+2018-04-11 15:40:34:162 INFO [registerHandlerMethod] org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 197 Mapped "{[/query],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.mlsc.ssm.controller.QueryController.query(java.lang.String)
+2018-04-11 15:40:34:552 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2018-04-11 15:40:34:563 INFO [registerHandler] org.springframework.web.servlet.handler.SimpleUrlHandlerMapping 315 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2018-04-11 15:40:34:618 INFO [initServletBean] org.springframework.web.servlet.DispatcherServlet 498 FrameworkServlet 'dispatcherServlet': initialization completed in 3354 ms

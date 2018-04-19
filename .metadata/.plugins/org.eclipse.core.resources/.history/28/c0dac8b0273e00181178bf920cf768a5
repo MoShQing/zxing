@@ -1,0 +1,8 @@
+package com.mlsc.ssm.controller;
+
+import redis.clients.jedis.JedisPool;
+
+public class JedisDemo {
+
+	JedisPool jedisPool;
+}

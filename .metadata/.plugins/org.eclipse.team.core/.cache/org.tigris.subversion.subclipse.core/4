@@ -1,0 +1,91 @@
+package com.shencai.reverseControl.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.mlsc.fw.common.annotation.NoCheckTicket;
+import com.shencai.communicationMange.entity.TOrgcenterTrandevice;
+import com.shencai.communicationMange.model.CommonModel;
+import com.shencai.fw.common.base.entity.PagingParameter;
+import com.shencai.fw.common.base.entity.ResultData;
+import com.shencai.fw.common.resolver.RequestJsonParam;
+import com.shencai.fw.data.Result;
+import com.shencai.reverseControl.controllerservice.IReverserConControllerService;
+import com.shencai.reverseControl.entity.CmdParams;
+import com.shencai.reverseControl.entity.TOrgcenterTrandevicecontroltype;
+import com.shencai.reverseControl.model.TOrgcenterTranDeviceReverserCmd;
+import com.shencai.reverseControl.model.TOrgcenterTranDeviceReverserCon;
+
+/**
+ * 数据反控
+ * 
+ * @author lvyl@shencai.cc
+ */
+@Controller("reverserConController")
+@RequestMapping("/service/communication/reverserCon")
+@Scope("prototype")
+public class ReverserConController {
+	@Autowired
+	private IReverserConControllerService reverserConControllerService;
+
+	@RequestMapping("/saveDeviceReverserCon")
+	@ResponseBody
+	public Result<Boolean> saveDeviceReverserCon(String ticket,
+			@RequestJsonParam(value = "tOrgcenterTranDeviceReverserCon", required = false) TOrgcenterTranDeviceReverserCon tOrgcenterTranDeviceReverserCon)
+			throws Exception {
+		return reverserConControllerService.saveDeviceReverserCon(ticket, tOrgcenterTranDeviceReverserCon);
+	}
+	
+	@RequestMapping("/getCmdStPSW")
+	@ResponseBody
+	public Result<String> getCmdStPSW(String ticket, 
+            @RequestJsonParam(value = "queryParams", required = false) TOrgcenterTranDeviceReverserCon queryParams) throws Exception {
+		return reverserConControllerService.getCmdStPSW(ticket,queryParams);
+	}
+	
+    @RequestMapping("/pageCommonCmd")
+    @ResponseBody
+    public Result<ResultData<TOrgcenterTrandevicecontroltype>> pageCommonCmd(String ticket, @RequestJsonParam(value = "pageParams", required = false) PagingParameter pageParams,
+            @RequestJsonParam(value = "queryParams", required = false) TOrgcenterTranDeviceReverserCon queryParams) throws Exception {
+        return reverserConControllerService.pageCommonCmd(ticket, pageParams,queryParams);
+    }
+    
+    @RequestMapping("/pageReverserCmd")
+    @ResponseBody
+    public Result<ResultData<TOrgcenterTranDeviceReverserCmd>> pageReverserCmd(String ticket, @RequestJsonParam(value = "pageParams", required = false) PagingParameter pageParams,
+            @RequestJsonParam(value = "queryParams", required = false) TOrgcenterTranDeviceReverserCon queryParams) throws Exception {
+        return reverserConControllerService.pageReverserCmd(ticket, pageParams,queryParams);
+    }
+    
+    @RequestMapping("/getPollIdListByPolType")
+    @ResponseBody
+    public Result<List<CommonModel>> getPollIdListByPolType(String ticket,
+            @RequestJsonParam(value = "queryParams", required = false) TOrgcenterTrandevice queryParams) throws Exception {
+        return reverserConControllerService.getPollIdListByPolType(ticket,queryParams);
+    }
+    
+	@RequestMapping("/getCmdDetail")
+	@ResponseBody
+	public Result<TOrgcenterTranDeviceReverserCmd> getCmdDetail(String ticket,
+            @RequestJsonParam(value = "queryParams", required = false) TOrgcenterTranDeviceReverserCon queryParams) throws Exception {
+		return reverserConControllerService.getCmdDetail(ticket,queryParams);
+	}
+	
+	@RequestMapping("/convertCmdParams")
+	@ResponseBody
+	public Result<CmdParams> convertCmdParams(String ticket,
+            @RequestJsonParam(value = "cmdParams", required = false) TOrgcenterTranDeviceReverserCon cmdParams) throws Exception {
+		return reverserConControllerService.convertCmdParams(ticket,cmdParams);
+	}
+	
+	@RequestMapping("/decode")
+    @ResponseBody
+    public Result<String> deCodeLoginInfo(String param)throws Exception {
+        return reverserConControllerService.deCode( param);
+    }
+}

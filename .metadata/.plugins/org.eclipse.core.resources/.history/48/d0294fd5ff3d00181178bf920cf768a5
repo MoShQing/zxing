@@ -1,0 +1,139 @@
+package com.mlsc.ssm.job;
+
+import java.util.Date;
+import java.util.TimeZone;
+
+import org.quartz.CronTrigger;
+import org.quartz.JobDataMap;
+import org.quartz.JobKey;
+import org.quartz.ScheduleBuilder;
+import org.quartz.Trigger;
+import org.quartz.TriggerBuilder;
+import org.quartz.TriggerKey;
+
+public class QuartzJob implements CronTrigger{
+
+	public void runWork() {
+		System.out.println(new Date());
+	}
+
+	@Override
+	public int compareTo(Trigger arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String getCalendarName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Date getEndTime() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Date getFinalFireTime() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Date getFireTimeAfter(Date arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public JobDataMap getJobDataMap() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public JobKey getJobKey() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TriggerKey getKey() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getMisfireInstruction() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Date getNextFireTime() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Date getPreviousFireTime() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getPriority() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ScheduleBuilder<? extends Trigger> getScheduleBuilder() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Date getStartTime() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean mayFireAgain() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public String getCronExpression() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getExpressionSummary() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TimeZone getTimeZone() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TriggerBuilder<CronTrigger> getTriggerBuilder() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
